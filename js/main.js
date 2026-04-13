@@ -385,26 +385,40 @@
             chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
         }
         
-        function generateResponse(message) {
-            const responses = {
-                'devis': `✅ <strong>Demande de devis</strong><br><br>Pour recevoir votre devis gratuit, merci de préciser :<br>• Type de pièce/outillage<br>• Quantité souhaitée<br>• Matériau (si connu)<br>• Plans/dessins disponibles<br><br>Vous pouvez aussi remplir le <a href="#contact">formulaire de contact</a>`,
-                
-                'services': `⚙️ <strong>Nos Services</strong><br><br>1. <strong>Conception d'outillage</strong><br>Moules, matrices, gabarits<br><br>2. <strong>Fabrication mécanique</strong><br>Usinage CNC 3 & 5 axes<br><br>3. <strong>Sous-traitance</strong><br>Production en série<br><br><a href="#services">Voir tous nos services</a>`,
-                
-                'contact': `📞 <strong>Contactez-nous</strong><br><br><strong>Téléphone :</strong> <a href="tel:+212522674628">+212 522 67 46 28</a><br><strong>Email :</strong> contact@cfmtechnologie.ma<br><strong>Adresse :</strong> BD Chefchaouni Km 11.5, Aïn Sebâa<br><br><a href="#contact">Envoyer un message →</a>`,
-                
-                'horaires': `🕐 <strong>Nos Horaires</strong><br><br><strong>Lundi - Vendredi :</strong> 8h00 - 18h00<br><strong>Samedi :</strong> 8h00 - 12h00<br><strong>Dimanche :</strong> Fermé<br><br>Zone Industrielle Aïn Sebâa, Casablanca`,
-                
-                'bonjour': `👋 Bonjour ! Je suis l'assistant virtuel de <strong>CFM Technologie</strong>.<br><br>Comment puis-je vous aider aujourd'hui ?`,
-                
-                'merci': `🙏 Je vous en prie !<br><br>N'hésitez pas si vous avez d'autres questions ou si vous souhaitez un devis personnalisé.`,
-                
-                'ville': `📍 Nous sommes situés à <strong>Casablanca</strong>, dans la zone industrielle d'Aïn Sebâa au Maroc.<br><br>Adresse exacte : Boulevard Chefchaouni, Km 11.500, Quartier Béausite`,
-                
-                'experience': `🏆 <strong>Notre Expérience</strong><br><br>Depuis <strong>2008</strong>, CFM Technologie met son expertise au service de l'industrie marocaine.<br><br>• 17 ans d'existence<br>• Zone industrielle stratégique<br>• Clients dans tous les secteurs`,
-                
-                'secteurs': `🏭 <strong>Secteurs desservis</strong><br><br>• Automobile<br>• Aéronautique<br>• Agroalimentaire<br>• Pharmaceutique<br>• BTP<br>• Industrie générale`
-            };
+ function generateResponse(message) {
+ const responses = {
+ 'devis': `✅ <strong>Demande de devis</strong><br><br>Pour recevoir votre devis gratuit, merci de préciser :<br>• Type de pièce/outillage<br>• Quantité souhaitée<br>• Matériau (si connu)<br>• Plans/dessins disponibles<br><br>Vous pouvez aussi remplir le <a href="#contact">formulaire de contact</a><br>Appelez directement :<br>📞 <a href="tel:+212522674628">0522 67 46 28</a> (Standard)<br>📞 <a href="tel:+212665407110">0665 40 71 10</a> (Mohamed) or <a href="tel:+212667773949">0667 77 39 49</a> (Hamid)`,
+
+ 'services': `⚙️ <strong>Nos Services</strong><br><br>1. <strong>Conception d'outillage</strong><br>Moules, matrices, gabarits<br><br>2. <strong>Fabrication mécanique</strong><br>Usinage CNC 3 axes, tournage, fraisage<br><br>3. <strong>Sous-traitance industrielle</strong><br>Production en série<br><br><a href="#services">Voir tous nos services</a>`,
+
+ 'equipements': `🔧 <strong>Notre Parc Machines</strong><br><br><strong>CNC:</strong><br>• HURON 1050×560×560<br>• AKEIRA SEKI 1100×560×560<br>• CINCINNATI 500×500×500<br>• MIKRON FW20 500×350×300<br>• Découpe fil 450×350<br><br><strong>Bureau d'étude:</strong><br>• SOLIDWORKS (licence)<br>• MASTERCAM (licence)<br><br><a href="#equipements">Voir tous nos équipements</a>`,
+
+ 'machines': `🔧 <strong>Notre Parc Machines</strong><br><br><strong>CNC:</strong><br>• HURON 1050×560×560<br>• AKEIRA SEKI 1100×560×560<br>• CINCINNATI 500×500×500<br>• MIKRON FW20 500×350×300<br>• Découpe fil 450×350<br><br><strong>Bureau d'étude:</strong><br>• SOLIDWORKS (licence)<br>• MASTERCAM (licence)<br><br><a href="#equipements">Voir tous nos équipements</a>`,
+
+ 'references': `🏆 <strong>Nos Références</strong><br><br>• Groupe SAFRAN<br>• RATP DEV Casablanca<br>• AKZO NOBEL<br>• DEGREMONT (LYDEC)<br>• ACAM STELIA<br>• ANIMAC (HONEYWELL)<br>• SAM Aéronautique<br>• SOTHEMA, MAPHAR<br>• AFRILUB / SALUB (AKWA)<br>• Et bien d'autres...<br><br><a href="#references">Voir toutes nos références</a>`,
+
+ 'contact': `📞 <strong>Contactez-nous</strong><br><br><strong>Standard :</strong> <a href="tel:+212522674628">+212 522 67 46 28</a><br><strong>Fax :</strong> +212 522 66 16 22<br><strong>Email :</strong> <a href="mailto:houdaigui@gmail.com">houdaigui@gmail.com</a><br><br><strong>Site Aïn Sebâa :</strong><br>KM 11.5, Bd Chefchaouni, ZI Béausite<br><br><strong>Site Moulay Rachid :</strong><br>32 Av Mohamed Erradi, ZI Moulay Rachid<br><br><strong>Contacts directs :</strong><br>👔 Mohamed EL HOUDAIGUI : <a href="tel:+212665407110">0665 40 71 10</a><br>🔧 Hamid EL MAHDI : <a href="tel:+212667773949">0667 77 39 49</a><br><br><a href="#contact">Envoyer un message →</a>`,
+
+ 'telephone': `📞 <strong>Nos Téléphones</strong><br><br><strong>Standard :</strong> <a href="tel:+212522674628">+212 522 67 46 28</a><br><strong>Fax :</strong> +212 522 66 16 22<br><br><strong>Mohamed EL HOUDAIGUI</strong> (Gérant)<br>📱 <a href="tel:+212665407110">+212 665 40 71 10</a><br><strong>Hamid EL MAHDI</strong> (Responsable Technique)<br>📱 <a href="tel:+212667773949">+212 667 77 39 49</a>`,
+
+ 'horaires': `🕐 <strong>Nos Horaires</strong><br><br><strong>Lundi - Vendredi :</strong> 8h00 - 18h00<br><strong>Samedi :</strong> 8h00 - 12h00<br><strong>Dimanche :</strong> Fermé<br><br>Zone Industrielle Aïn Sebâa & Moulay Rachid, Casablanca`,
+
+ 'adresse': `📍 <strong>Nos Sites</strong><br><br><strong>Site Aïn Sebâa :</strong><br>KM 11.5, Boulevard Chefchaouni<br>Zone Industrielle Béausite<br>Casablanca 20100<br><br><strong>Site Moulay Rachid :</strong><br>32 Avenue Mohamed Erradi<br>Zone Industrielle Moulay Rachid<br>Casablanca 20250`,
+
+ 'bonjour': `👋 Bonjour ! Je suis l'assistant virtuel de <strong>CFM Technologie</strong>.<br><br>Comment puis-je vous aider aujourd'hui ?`,
+
+ 'merci': `🙏 Je vous en prie !<br><br>N'hésitez pas si vous avez d'autres questions ou si vous souhaitez un devis personnalisé.`,
+
+ 'ville': `📍 Nous sommes situés à <strong>Casablanca</strong>, avec deux sites industriels :<br><br>1. <strong>Zone Industrielle Béausite</strong> (Aïn Sebâa)<br>2. <strong>Zone Industrielle Moulay Rachid</strong>`,
+
+ 'experience': `🏆 <strong>Notre Expérience</strong><br><br>Depuis <strong>2008</strong>, CFM Technologie met son expertise au service de l'industrie marocaine.<br><br>• 17 ans d'expérience<br>• 10-12 collaborateurs qualifiés<br>• 2 sites industriels<br>• Bureau d'étude SOLIDWORKS<br>• Machines CNC performantes`,
+
+ 'secteurs': `🏭 <strong>Secteurs desservis</strong><br><br>• Aéronautique (SAFRAN, ACAM, SAM...)<br>• Automobile<br>• Agroalimentaire<br>• Pharmaceutique (SOTHEMA, MAPHAR)<br>• Pétrochimie (AKZO NOBEL, AFRILUB...)<br>• Électrique<br>• Plastique`,
+
+ 'solidworks': `💻 <strong>Bureau d'Étude</strong><br><br>Nous utilisons <strong>SOLIDWORKS</strong> sous licence officielle pour la conception 3D de vos outillages et pièces mécaniques.<br><br>De plus, <strong>MASTERCAM</strong> pour la programmation de nos machines CNC.`,
+
+ 'cnc': `🔧 <strong>Machines CNC</strong><br><br>• HURON : 1050×560×560 mm<br>• AKEIRA SEKI : 1100×560×560 mm<br>• CINCINNATI : 500×500×500 mm<br>• MIKRON FW20 : 500×350×300 mm<br>• Découpe à fil : 450×350 mm (épaisseur 0,2mm)<br><br><a href="#equipements">Voir tous nos équipements</a>`
+ };
             
             // Check for keywords
             for (let key in responses) {

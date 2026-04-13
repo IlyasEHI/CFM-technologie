@@ -80,12 +80,32 @@ html {
 }
 
 body {
-    font-family: var(--font-body);
-    font-size: 1rem;
-    line-height: 1.6;
-    color: var(--gray-700);
-    background: var(--white);
-    -webkit-font-smoothing: antialiased;
+ font-family: var(--font-body);
+ font-size: 1rem;
+ line-height: 1.6;
+ color: var(--gray-700);
+ background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+ background-attachment: fixed;
+ -webkit-font-smoothing: antialiased;
+}
+
+/* Logo Styles */
+.logo-img {
+ height: 50px;
+ width: auto;
+ display: block;
+ transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-img {
+ transform: scale(1.02);
+}
+
+.footer-logo-img {
+ height: 45px;
+ width: auto;
+ display: block;
+ margin-bottom: 1rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -596,7 +616,8 @@ section {
    SERVICES SECTION
    ======================================== */
 .services {
-    background: var(--white);
+ background: rgba(255, 255, 255, 0.7);
+ backdrop-filter: blur(10px);
 }
 
 .services-grid {
@@ -704,10 +725,11 @@ section {
 }
 
 /* ========================================
-   EXPERTISE SECTION
-   ======================================== */
+| EXPERTISE SECTION
+======================================== */
 .expertise {
-    background: var(--gray-50);
+ background: rgba(255, 255, 255, 0.3);
+ backdrop-filter: blur(8px);
 }
 
 .expertise-grid {
@@ -1737,7 +1759,8 @@ section {
 | ABOUT SECTION
 ======================================== */
 .about {
- background: var(--gray-50);
+ background: rgba(255, 255, 255, 0.4);
+ backdrop-filter: blur(8px);
 }
 
 .about-grid {
@@ -1842,7 +1865,8 @@ section {
 | EQUIPEMENTS SECTION
 ======================================== */
 .equipements {
- background: var(--white);
+ background: rgba(255, 255, 255, 0.5);
+ backdrop-filter: blur(8px);
 }
 
 .equipment-category {
@@ -1961,7 +1985,8 @@ section {
 | REFERENCES SECTION
 ======================================== */
 .references {
- background: var(--gray-50);
+ background: rgba(255, 255, 255, 0.35);
+ backdrop-filter: blur(8px);
 }
 
 .references-grid {

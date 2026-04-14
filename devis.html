@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Demande de Devis | CFM Technologie - Usinage de Précision Casablanca</title>
+ <meta name="description" content="Demandez votre devis gratuit pour sous-traitance mécanique et usinage de précision à Casablanca. Réponse sous 24h. CFM Technologie, Aïn Sebâa.">
+ <meta name="keywords" content="devis sous-traitance mécanique, devis usinage, devis fabrication, CFM Technologie, Casablanca, Aïn Sebâa">
+ 
+ <!-- Open Graph -->
+ <meta property="og:title" content="Demande de Devis | CFM Technologie">
+ <meta property="og:description" content="Demandez votre devis gratuit pour sous-traitance mécanique et usinage de précision.">
+ <meta property="og:type" content="business.business">
+ <meta property="og:url" content="https://cfm-technologie.ma/devis.html">
+ 
+ <!-- Schema.org LocalBusiness -->
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "LocalBusiness",
+ "name": "CFM Technologie - Demande de Devis",
+ "description": "Demande de devis pour sous-traitance mécanique et usinage de précision",
+ "url": "https://cfm-technologie.ma/devis.html",
+ "telephone": "+212522674628",
+ "address": {
+ "@type": "PostalAddress",
+ "streetAddress": "KM 11.5, Bd Chefchaouni, Zone Industrielle Béausite",
+ "addressLocality": "Casablanca",
+ "addressRegion": "Casablanca-Settat",
+ "postalCode": "20100",
+ "addressCountry": "MA"
+ }
+ }
+ </script>
+ 
+ <link rel="stylesheet" href="css/style.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ <style>
+ /* Styles spécifiques à la page devis */
+ .devis-page {
+ min-height: 100vh;
+ padding-top: 100px;
+ padding-bottom: 4rem;
+ background: linear-gradient(135deg, var(--gray-50) 0%, #dbeafe 50%, var(--gray-50) 100%);
+ }
+ 
+ .devis-container {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 1.5rem;
+ }
+ 
+ .devis-header {
+ text-align: center;
+ margin-bottom: 3rem;
+ }
+ 
+ .devis-header h1 {
+ font-size: clamp(2rem, 5vw, 3rem);
+ font-weight: 800;
+ color: var(--gray-900);
+ margin-bottom: 1rem;
+ line-height: 1.2;
+ }
+ 
+ .devis-header p {
+ font-size: 1.125rem;
+ color: var(--gray-600);
+ max-width: 600px;
+ margin: 0 auto;
+ }
+ 
+ .devis-grid {
+ display: grid;
+ grid-template-columns: 1fr 1.2fr;
+ gap: 3rem;
+ align-items: start;
+ }
+ 
+ .devis-benefits {
+ display: flex;
+ flex-direction: column;
+ gap: 1.5rem;
+ }
+ 
+ .benefit-card {
+ background: var(--white);
+ padding: 1.5rem;
+ border-radius: var(--radius-xl);
+ box-shadow: var(--shadow-md);
+ border-left: 4px solid var(--primary);
+ }
+ 
+ .benefit-card i {
+ font-size: 1.75rem;
+ color: var(--primary);
+ margin-bottom: 0.75rem;
+ }
+ 
+ .benefit-card h3 {
+ font-size: 1.125rem;
+ font-weight: 700;
+ color: var(--gray-900);
+ margin-bottom: 0.5rem;
+ }
+ 
+ .benefit-card p {
+ color: var(--gray-600);
+ font-size: 0.9375rem;
+ }
+ 
+ .devis-form-wrapper {
+ background: var(--white);
+ padding: 2.5rem;
+ border-radius: var(--radius-2xl);
+ box-shadow: var(--shadow-xl);
+ }
+ 
+ .devis-form-wrapper h2 {
+ font-size: 1.5rem;
+ color: var(--gray-900);
+ margin-bottom: 1.5rem;
+ text-align: center;
+ }
+ 
+ .form-row {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 1rem;
+ margin-bottom: 1.25rem;
+ }
+ 
+ .form-group {
+ margin-bottom: 1.25rem;
+ }
+ 
+ .form-row .form-group {
+ margin-bottom: 0;
+ }
+ 
+ .form-group label {
+ display: block;
+ font-weight: 600;
+ font-size: 0.875rem;
+ color: var(--gray-700);
+ margin-bottom: 0.5rem;
+ }
+ 
+ .form-group label span.required {
+ color: var(--industrial);
+ }
+ 
+ .form-group input,
+ .form-group select,
+ .form-group textarea {
+ width: 100%;
+ padding: 0.875rem 1rem;
+ border: 2px solid var(--gray-200);
+ border-radius: var(--radius-lg);
+ font-size: 1rem;
+ font-family: var(--font-body);
+ transition: all 0.2s ease;
+ background: var(--white);
+ }
+ 
+ .form-group input:focus,
+ .form-group select:focus,
+ .form-group textarea:focus {
+ outline: none;
+ border-color: var(--primary);
+ box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+ }
+ 
+ .form-group input::placeholder,
+ .form-group textarea::placeholder {
+ color: var(--gray-400);
+ }
+ 
+ .form-group .error-message {
+ color: #ef4444;
+ font-size: 0.8125rem;
+ margin-top: 0.375rem;
+ display: none;
+ }
+ 
+ .form-group.has-error input,
+ .form-group.has-error textarea,
+ .form-group.has-error select {
+ border-color: #ef4444;
+ }
+ 
+ .form-group.has-error .error-message {
+ display: block;
+ }
+ 
+ .form-group select {
+ cursor: pointer;
+ appearance: none;
+ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+ background-repeat: no-repeat;
+ background-position: right 1rem center;
+ }
+ 
+ .file-upload {
+ border: 2px dashed var(--gray-300);
+ border-radius: var(--radius-lg);
+ padding: 1.5rem;
+ text-align: center;
+ cursor: pointer;
+ transition: all 0.2s ease;
+ }
+ 
+ .file-upload:hover {
+ border-color: var(--primary);
+ background: var(--gray-50);
+ }
+ 
+ .file-upload i {
+ font-size: 2rem;
+ color: var(--primary);
+ margin-bottom: 0.75rem;
+ }
+ 
+ .file-upload p {
+ color: var(--gray-600);
+ font-size: 0.9375rem;
+ margin: 0;
+ }
+ 
+ .file-upload input {
+ display: none;
+ }
+ 
+ .submit-btn {
+ width: 100%;
+ padding: 1.125rem;
+ font-size: 1.125rem;
+ font-weight: 700;
+ margin-top: 1rem;
+ }
+ 
+ .privacy-note {
+ text-align: center;
+ font-size: 0.8125rem;
+ color: var(--gray-500);
+ margin-top: 1rem;
+ }
+ 
+ .trust-badges {
+ display: flex;
+ justify-content: center;
+ gap: 2rem;
+ margin-top: 2rem;
+ flex-wrap: wrap;
+ }
+ 
+ .trust-badge {
+ display: flex;
+ align-items: center;
+ gap: 0.5rem;
+ color: var(--gray-600);
+ font-size: 0.875rem;
+ }
+ 
+ .trust-badge i {
+ color: #10b981;
+ }
+ 
+ /* Responsive */
+ @media (max-width: 992px) {
+ .devis-grid {
+ grid-template-columns: 1fr;
+ }
+ 
+ .devis-benefits {
+ order: 2;
+ }
+ 
+ .devis-form-wrapper {
+ order: 1;
+ }
+ }
+ 
+ @media (max-width: 576px) {
+ .form-row {
+ grid-template-columns: 1fr;
+ }
+ 
+ .devis-form-wrapper {
+ padding: 1.5rem;
+ }
+ }
+ 
+ /* Formulaire de succès */
+ .success-message {
+ display: none;
+ text-align: center;
+ padding: 2rem;
+ }
+ 
+ .success-message.show {
+ display: block;
+ }
+ 
+ .success-message i {
+ font-size: 4rem;
+ color: #10b981;
+ margin-bottom: 1rem;
+ }
+ 
+ .success-message h3 {
+ font-size: 1.5rem;
+ color: var(--gray-900);
+ margin-bottom: 0.75rem;
+ }
+ 
+ .success-message p {
+ color: var(--gray-600);
+ margin-bottom: 1.5rem;
+ }
+ 
+ .success-message .btn {
+ display: inline-flex;
+ }
+ </style>
+</head>
+<body>
+ <!-- Navigation simplifiée -->
+ <nav class="navbar scrolled" id="navbar">
+ <div class="nav-container">
+ <a href="index.html" class="logo">
+ <img src="assets/logo-cfm.webp" alt="CFM Technologie" class="logo-img">
+ </a>
+ <a href="tel:+212522674628" class="nav-cta">
+ <i class="fas fa-phone"></i>
+ <span>+212 522 67 46 28</span>
+ </a>
+ </div>
+ </nav>
+
+ <!-- Page Devis -->
+ <main class="devis-page">
+ <div class="devis-container">
+ <div class="devis-header">
+ <h1>Demande de Devis Gratuit<br><span style="color: #2563eb;">Sous-traitance Mécanique Casablanca</span></h1>
+ <p>Remplissez ce formulaire pour recevoir votre devis personnalisé sous 24h. Expert en usinage de précision à Aïn Sebâa depuis 2008.</p>
+ </div>
+ 
+ <div class="devis-grid">
+ <div class="devis-benefits">
+ <div class="benefit-card">
+ <i class="fas fa-bolt"></i>
+ <h3>Réponse sous 24h</h3>
+ <p>Nous vous répondons rapidement avec un devis détaillé et personnalisé.</p>
+ </div>
+ 
+ <div class="benefit-card">
+ <i class="fas fa-map-marker-alt"></i>
+ <h3>2 sites à Casablanca</h3>
+ <p>Aïn Sebâa (Béausite) et Moulay Rachid. Proximité garantie avec votre site industriel.</p>
+ </div>
+ 
+ <div class="benefit-card">
+ <i class="fas fa-cogs"></i>
+ <h3>Parc machines CNC complet</h3>
+ <p>Centres d'usinage HURON, CINCINNATI, bureau d'étude SOLIDWORKS sous licence.</p>
+ </div>
+ 
+ <div class="benefit-card">
+ <i class="fas fa-industry"></i>
+ <h3>Clients de référence</h3>
+ <p>SAFRAN, AKZO NOBEL, SOTHEMA, RATP, DEGREMONT nous font confiance.</p>
+ </div>
+ 
+ <div class="benefit-card">
+ <i class="fas fa-award"></i>
+ <h3>17 ans d'expérience</h3>
+ <p>Depuis 2008, nous accompagnons les industriels marocains avec excellence.</p>
+ </div>
+ </div>
+ 
+ <div class="devis-form-wrapper">
+ <div id="formContainer">
+ <h2>📝 Décrivez votre projet</h2>
+ <form id="devisForm" novalidate>
+ <div class="form-row">
+ <div class="form-group">
+ <label for="nom">Nom complet <span class="required">*</span></label>
+ <input type="text" id="nom" name="nom" required placeholder="Votre nom et prénom">
+ <span class="error-message">Veuillez entrer votre nom</span>
+ </div>
+ <div class="form-group">
+ <label for="entreprise">Entreprise</label>
+ <input type="text" id="entreprise" name="entreprise" placeholder="Nom de votre société">
+ </div>
+ </div>
+ 
+ <div class="form-row">
+ <div class="form-group">
+ <label for="email">Email <span class="required">*</span></label>
+ <input type="email" id="email" name="email" required placeholder="votre@email.com">
+ <span class="error-message">Veuillez entrer un email valide</span>
+ </div>
+ <div class="form-group">
+ <label for="telephone">Téléphone <span class="required">*</span></label>
+ <input type="tel" id="telephone" name="telephone" required placeholder="+212 6XX XX XX XX">
+ <span class="error-message">Veuillez entrer votre téléphone</span>
+ </div>
+ </div>
+ 
+ <div class="form-group">
+ <label for="type-projet">Type de projet <span class="required">*</span></label>
+ <select id="type-projet" name="type-projet" required>
+ <option value="">Sélectionnez le type de projet</option>
+ <option value="sous-traitance">Sous-traitance industrielle</option>
+ <option value="conception-outillage">Conception d'outillage</option>
+ <option value="fabrication">Fabrication mécanique / Usinage CNC</option>
+ <option value="assemblage">Assemblage mécanique</option>
+ <option value="maintenance">Maintenance / Urgence industrielle</option>
+ <option value="autre">Autre demande</option>
+ </select>
+ </div>
+ 
+ <div class="form-group">
+ <label for="description">Description du projet <span class="required">*</span></label>
+ <textarea id="description" name="description" rows="5" required placeholder="Décrivez votre besoin en détail : type de pièce, matériau, quantité, délais, plans disponibles..."></textarea>
+ <span class="error-message">Veuillez décrire votre projet</span>
+ </div>
+ 
+ <div class="form-group">
+ <label for="quantite">Quantité estimée</label>
+ <select id="quantite" name="quantite">
+ <option value="">Sélectionnez une fourchette</option>
+ <option value="1-10">Pièce unique (prototype)</option>
+ <option value="10-100">Petite série (10-100 pièces)</option>
+ <option value="100-1000">Moyenne série (100-1000 pièces)</option>
+ <option value="1000+">Grande série (1000+ pièces)</option>
+ </select>
+ </div>
+ 
+ <div class="form-group">
+ <label>Joindre des fichiers (plans, photos, devis...)</label>
+ <div class="file-upload" onclick="document.getElementById('fileInput').click()">
+ <input type="file" id="fileInput" name="fichiers" multiple accept=".pdf,.dwg,.step,.jpg,.png,.jpeg">
+ <i class="fas fa-cloud-upload-alt"></i>
+ <p>Cliquez ou glissez vos fichiers ici<br><small>PDF, DWG, STEP, images - Max 10 Mo</small></p>
+ </div>
+ </div>
+ 
+ <button type="submit" class="btn btn-primary submit-btn" id="submitBtn">
+ <span>Recevoir mon devis gratuit</span>
+ <i class="fas fa-paper-plane"></i>
+ </button>
+ 
+ <p class="privacy-note">
+ <i class="fas fa-lock"></i> Vos données sont protégées et utilisées uniquement pour traiter votre demande.
+ </p>
+ </form>
+ </div>
+ 
+ <div class="success-message" id="successMessage">
+ <i class="fas fa-check-circle"></i>
+ <h3>Demande envoyée avec succès !</h3>
+ <p>Merci pour votre intérêt. Notre équipe étudie votre projet et vous contactera sous 24h au maximum.</p>
+ <p style="margin-bottom: 1.5rem;"><strong>Mohamed EL HOUDAIGUI</strong> - Gérant<br><a href="tel:+212665407110">+212 665 40 71 10</a></p>
+ <a href="index.html" class="btn btn-primary">
+ <i class="fas fa-arrow-left"></i>
+ <span>Retour à l'accueil</span>
+ </a>
+ </div>
+ </div>
+ </div>
+ 
+ <div class="trust-badges">
+ <div class="trust-badge">
+ <i class="fas fa-shield-alt"></i>
+ <span>Devis gratuit & sans engagement</span>
+ </div>
+ <div class="trust-badge">
+ <i class="fas fa-clock"></i>
+ <span>Réponse sous 24h</span>
+ </div>
+ <div class="trust-badge">
+ <i class="fas fa-users"></i>
+ <span>Confiance des grands groupes</span>
+ </div>
+ </div>
+ </div>
+ </main>
+
+ <!-- Footer simplifié -->
+ <footer class="footer" style="padding: 2rem 0;">
+ <div class="container">
+ <div style="text-align: center; color: var(--gray-500);">
+ <p>&copy; 2024 CFM Technologie SARL - Zone Industrielle Aïn Sebâa, Casablanca</p>
+ <p style="margin-top: 0.5rem; font-size: 0.875rem;">
+ <i class="fas fa-phone"></i> +212 522 67 46 28 | 
+ <i class="fas fa-envelope"></i> houdaigui@gmail.com
+ </p>
+ </div>
+ </div>
+ </footer>
+
+ <script>
+ // Validation et envoi du formulaire
+ document.getElementById('devisForm').addEventListener('submit', function(e) {
+ e.preventDefault();
+ 
+ const form = this;
+ const submitBtn = document.getElementById('submitBtn');
+ const originalText = submitBtn.innerHTML;
+ let isValid = true;
+ 
+ // Validation des champs requis
+ const requiredFields = ['nom', 'email', 'telephone', 'type-projet', 'description'];
+ 
+ requiredFields.forEach(field => {
+ const input = form.querySelector(`[name="${field}"]`);
+ const group = input.closest('.form-group');
+ 
+ if (!input.value.trim()) {
+ group.classList.add('has-error');
+ isValid = false;
+ } else {
+ group.classList.remove('has-error');
+ }
+ });
+ 
+ // Validation email
+ const email = form.querySelector('[name="email"]');
+ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+ if (email.value && !emailRegex.test(email.value)) {
+ email.closest('.form-group').classList.add('has-error');
+ isValid = false;
+ }
+ 
+ if (!isValid) {
+ // Scroll vers la première erreur
+ const firstError = form.querySelector('.has-error');
+ if (firstError) {
+ firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+ }
+ return;
+ }
+ 
+ // Simulation d'envoi
+ submitBtn.disabled = true;
+ submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+ 
+ setTimeout(() => {
+ document.getElementById('formContainer').style.display = 'none';
+ document.getElementById('successMessage').classList.add('show');
+ 
+ // Scroll vers le message de succès
+ document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
+ }, 1500);
+ });
+ 
+ // Suppression des erreurs à la saisie
+ document.querySelectorAll('.form-group input, .form-group select, .form-group textarea').forEach(input => {
+ input.addEventListener('input', function() {
+ this.closest('.form-group').classList.remove('has-error');
+ });
+ });
+ 
+ // Gestion du file input
+ document.getElementById('fileInput').addEventListener('change', function() {
+ const fileCount = this.files.length;
+ const uploadDiv = this.closest('.file-upload');
+ 
+ if (fileCount > 0) {
+ uploadDiv.innerHTML = `
+ <i class="fas fa-check-circle" style="color: #10b981;"></i>
+ <p><strong>${fileCount} fichier(s) sélectionné(s)</strong><br>${Array.from(this.files).map(f => f.name).join(', ')}</p>
+ `;
+ }
+ });
+ </script>
+</body>
+</html>

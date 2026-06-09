@@ -2,6 +2,8 @@
 
 Site web officiel de **CFM Technologie SARL** - Entreprise de mécanique de précision et sous-traitance industrielle basée à Casablanca, Maroc.
 
+## LIEN DU SITE : https://mango-coast-02dfa151e.7.azurestaticapps.net/
+
 ## 📋 À propos
 
 CFM Technologie SARL est une entreprise créée en 2008, spécialisée dans :
